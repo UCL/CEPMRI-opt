@@ -1,9 +1,8 @@
 # CEPMRI-opt
-Contrast Enhanced Prostate MRI Sequence Optimisation
+This repository contains the code associted with the paper:
+**Optimisation of contrast enhanced MR sequences for MR imaging of prostate cancer**
 
-Code associated with paper:
-"Optimisation of contrast enhanced MR sequences for MR imaging of prostate cancer"
-
-Data for Figure 3 is available from Zenodo:
-https://zenodo.org/record/1305057 
-
+The user needs:
+1) The code in the current CEPMRI-opt repository.
+2) Shaihan Malik's [EPG-X code](https://github.com/mriphysics/EPG-X) which is also [available as a zip file](https://github.com/DANAJK/EPG-X/archive/master.zip).  
+3) To re-create Figure 3, the data at the Zenodo site: https://zenodo.org/record/1305057 
