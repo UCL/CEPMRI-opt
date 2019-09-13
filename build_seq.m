@@ -56,7 +56,7 @@ function [sq, series] = build_seq(scheme, varargin)
 %
 % David Atkinson  D.Atkinson@ucl.ac.uk, with help from Shaihan Malik.
 %
-% See also FLIP_SWEEP
+% See also QFLIP_SWEEP
 
 % Copyright 2018, University College London.
 
@@ -69,7 +69,7 @@ T2 = 80 ;
 diff = [] ;
 SPAIR_dur = 20.49 ; % this will be rounded to nearest TR in add_seq
 inv_dur = TR ; % not rounded 
-sweep = 'quad' ; % flip angle sweep type, see flip_sweep
+sweep = 'quad' ; % flip angle sweep type, see qflip_sweep
 plot_sequence = false ;
 
 % user settings
@@ -547,7 +547,7 @@ end
 
 function [sq, next_tstart, next_spoil_index] = build_shot(series, next_tstart, next_spoil_index) 
 
-shot_fa = flip_sweep(series.FA, series.nstartup, series.ntotal, series.sweep) ; % compute flip angle sweep
+shot_fa = qflip_sweep(series.FA, series.nstartup, series.ntotal, series.sweep) ; % compute flip angle sweep
 np = next_spoil_index + (series.ntotal-1) ; % total number of RF spoil pulses from beginning to end of this shot
 p=[1:np];
 phi = cumsum((p-1).* series.spoil_incr) ; % phi will be length np, just use the last ntotal for this shot

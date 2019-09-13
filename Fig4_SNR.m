@@ -1,11 +1,12 @@
-function Fig3_SNR(mode)
-% Fig3_SNR
+function Fig4_SNR(mode)
+% Fig4_SNR
 % Plot signal from specified pixels in TO5 gels.
 %
-% FIG3_SNR  
-% Fig3_SNR('interactive')  to manually select pixels (one off)
+% FIG4_SNR  
+% FIG4_SNR('paper') to reproduce paper figure
+% Fig4_SNR('interactive')  to manually select pixels (one off)
 %
-% Requires data files to be available - see cep_doctor for info.
+% Requires data files to be available - see file cep_doctor.m for info.
 %
 % David Atkinson D.Atkinson@ucl.ac.uk
 %
@@ -15,13 +16,13 @@ function Fig3_SNR(mode)
 % Copyright 2018 University College London.
 
 % Load data.
-% In interactive mode;
-%    manually select and note pixels to plot.
+%
 % In paper mode,
 %    opens figure
 %    shows represenative slices
 %    shows plot of signal for two gels.
-%
+% In interactive mode;
+%    manually select and note pixels to plot.
 
 if nargin< 1
     mode = 'paper' ;
@@ -32,7 +33,7 @@ dataset = '20Mar2018' ;
 
 % To save the DICOMs as .mat files (run once)
 %action.load  = 'loaddicom' ;
-%action.savematfolder = pref_uigetdir('Fig3_SNR','matfolder') ;
+%action.savematfolder = pref_uigetdir('Fig4_SNR','matfolder') ;
 
 % Use the following to read in the .mat files
  action.load = 'loadmat' ; 
@@ -104,9 +105,13 @@ switch dataset
         error(['Unknown dataset name'])
 end
 
-disp(['Select folder containing dataset: ',dataset])
-folder = pref_uigetdir('Fig3_SNR','folder') ; % full filename
-
+disp(['Select folder containing dowloaded dataset: ',dataset])
+%folder = pref_uigetdir('Fig4_SNR','folder') ; % full filename
+folder = uigetdir([],'Select folder containing downloaded dataset') ;
+if isnumeric(folder) || ~exist(folder,'dir')
+    warning(['Folder does not exist.'])
+    return
+end
 
 
 switch mode
