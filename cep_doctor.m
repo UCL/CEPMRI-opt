@@ -30,16 +30,11 @@ end
 
 % Fig 3 (EPG)
 % Needs EPG-X (already tested), plus other code:
-if ~exist('qflip_sweep','file')
-    disp(' ')
-    disp(['qflip_sweep.m is required'])
-end
 
 if ~exist('sq_epg_gre','file') || ~exist('build_seq','file')
     disp(' ')
-    disp(['The CEP code is required. '])
-    disp([' This can be downloaded by copying and pasting this MATLAB command: '])
-    disp(['   web('''',''-new'')'])
+    disp('The CEP code is required. ')
+    disp(' This is available from the <a href="https://github.com/UCL/CEPMRI-opt" github.com/UCL/CEPMRI-opt site</a>.')
 end
 
 
