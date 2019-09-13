@@ -1,5 +1,5 @@
-function Fig4_EPG
-% FIG4_EPG Figure showing Extended Phase Graph simulations
+function Fig3_EPG
+% FIG3_EPG Figure showing Extended Phase Graph simulations
 %
 % Uses a single representative TR/FA to avoid confusion.
 %
